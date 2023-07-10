@@ -1,0 +1,123 @@
+.hero-container {
+    height: calc(100vh - 90px);
+    position: relative;
+    display: flex;
+    align-items: center;
+    transition: 1s all ease;
+
+    .bg-elements {
+
+        .hero-bg-img1 {
+            position: absolute;
+            top: 5%;
+            left: 10%;
+            width: 300px;
+            height: 300px;
+            transform: rotate(10deg);
+            z-index: -1;
+            border-radius: 30px 0;
+            object-fit: cover;
+        }
+
+        .hero-bg-img2 {
+            position: absolute;
+            bottom: 5%;
+            right: 10%;
+            transform: rotate(-10deg);
+            width: 300px;
+            height: 300px;
+            z-index: -1;
+            object-fit: cover;
+        }
+
+
+        .bg-cube1 {
+            position: absolute;
+            width: 80px;
+            height: 80px;
+            background-color: #FF4E4E;
+            bottom: 5%;
+            left: 10%;
+            z-index: -1;
+            transform: rotate(-25deg);
+        }
+
+        .bg-cube2 {
+            position: absolute;
+            width: 80px;
+            height: 80px;
+            background-color: #fe3030;
+            top: 15%;
+            right: 10%;
+            z-index: -1;
+            transform: rotate(30deg);
+            border-radius: 15px;
+        }
+
+    }
+
+    .hero-details {
+        display: flex;
+        flex-direction: column;
+        width: min(50%, 1000px);
+        margin-inline: auto;
+        color: #1F2023;
+
+        h1 {
+            font-size: 3.3rem;
+            font-weight: 700;
+            text-align: center;
+        }
+
+        .hero-description {
+            width: min(70%, 1000px);
+            margin-inline: auto;
+
+            a {
+                text-decoration: none;
+                color: #FF4E4E;
+                border-bottom: 1px solid #FF4E4E;
+            }
+
+        
+        }
+
+
+        span {
+            display: inline-block;
+            transform: rotate(-5deg);
+        }
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .hero-container{
+
+        .bg-elements{
+
+            .hero-img {
+                display: none;
+                width: 200px;
+                height: 200px;
+            }
+
+            .bg-cube2{
+                top: 80%;
+            }
+
+            .bg-cube1{
+                bottom: 80%;
+            }
+            
+        }
+
+        .hero-details{
+
+            width: min(80%, 1000px);
+
+            .hero-description{
+                width: 100%;
+            }
+        }
+    }
+}

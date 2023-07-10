@@ -1,0 +1,109 @@
+.footer {
+    background-color: #1F2023;
+    color: white;
+    display: flex;
+    flex-direction: column;
+
+    .footer-content {
+        display: flex;
+        gap: 10%;
+        padding: 5%;
+        justify-content: center;
+        font-weight: 300;
+
+        .footer-section {
+            display: flex;
+            flex-direction: column;
+            max-width: 300px;
+
+            span{
+                cursor: pointer;
+            }
+
+            span:hover{
+                color: rgb(255, 161, 161);
+            }
+
+            .section-settings {
+
+                i{
+                    display: none;
+                }
+
+                .section-title {
+                    font-size: 1em;
+                    color: #838b95;
+                    font-weight: 500;
+                }
+            }
+        }
+    }
+
+    .footer-bottom {
+        display: flex;
+        align-items: center;
+        border-top: 1px solid #34373b;
+        justify-content: space-between;
+        padding: 20px 5%;
+        font-size: 0.8em;
+
+        .fa-brands {
+            color: white;
+        }
+
+        .payment-methods {
+            display: flex;
+            gap: 20px;
+            font-size: 3em;
+        }
+    }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+@media only screen and (max-width: 720px) {
+    .footer {
+
+        .footer-content {
+            flex-direction: column;
+            flex-wrap: wrap;
+            justify-content: flex-start;
+
+            .footer-section {
+                max-width: 100%;
+
+                .section-settings {
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+
+                    i{
+                        display: block;
+                    }
+
+                    h1 {
+                        cursor: pointer;
+                        width: 100%;
+                    }
+
+                }
+
+
+            }
+
+        }
+
+        .footer-bottom {
+            flex-direction: column;
+        }
+    }
+}

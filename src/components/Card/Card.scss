@@ -1,0 +1,95 @@
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.card-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+    overflow: hidden;
+    margin-bottom: 20px;
+    width: 250px;
+    height: 380px;
+
+
+    .card-top {
+        position: relative;
+
+        .main-image {
+            position: relative;
+            object-fit: cover;
+            width: 250px;
+            height: 300px;
+        }
+
+        .badge {
+            position: absolute;
+            z-index: 1;
+            font-weight: 500;
+            padding: 5px 10px;
+            color: #FF4E4E;
+        }
+
+        .new-badge {
+            top: 10px;
+            left: 10px;
+            font-size: 0.5em;
+            font-weight: 500;
+            background-color: white;
+        }
+
+        .discount {
+            top: 5px;
+            right: 5px;
+            text-align: center;
+            font-size: 1em;
+            background-color: transparent;
+        }
+
+        .add-to-cart-btn {
+            cursor: pointer;
+            height: 40px;
+            width: 40px;
+            position: absolute;
+            bottom: 20px;
+            right: 10px;
+            border: none;
+            background-color: #1F2023;
+            color: white;
+            font-size: 1.5em;
+        }
+
+    }
+
+    .card-title {
+        font-size: 0.8em;
+        font-weight: 300;
+        margin: 0;
+
+    }
+
+    .price-info {
+        display: flex;
+        width: 100%;
+        gap: 30px;
+        justify-content: center;
+        align-items: center;
+
+        p {
+            margin: 0;
+        }
+
+        .card-price {
+            font-weight: bold;
+            color: #FF4E4E;
+        }
+
+        .card-old--price {
+            color: gray;
+            text-decoration: line-through;
+        }
+    }
+
+}

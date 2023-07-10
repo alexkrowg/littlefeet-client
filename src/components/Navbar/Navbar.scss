@@ -1,0 +1,79 @@
+.navbar {
+    display: flex;
+    height: 90px;
+    align-items: center;
+    justify-content: space-around;
+    gap: 50px;
+
+    .logo {
+        font-size: 2em;
+        text-decoration: none;
+        color: inherit;
+        font-weight: 500;
+    }
+
+    .wrapper {
+        display: flex;
+        align-items: center;
+        gap: 50px;
+
+        .nav-list a {
+            margin-right: 3em;
+            text-decoration: none;
+            color: rgb(83, 83, 83);
+        }
+    }
+
+    .menu-items {
+        display: flex;
+        align-items: center;
+        gap: 25px;
+
+        i {
+            cursor: pointer;
+            font-weight: bold;
+            font-size: 1.2em;
+        }
+
+        a{
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .shopping-bag {
+            position: relative;
+
+            span {
+                position: absolute;
+                padding: 2px;
+                width: 15px;
+                font-size: 0.7em;
+                height: 15px;
+                border-radius: 7px;
+                color: white;
+                background-color: #FF4E4E;
+                box-shadow: 1px 1px 15px -3px #FF4E4E;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                top: -10px;
+                right: -12px;
+            }
+
+            i{
+                font-size: 1.3em;
+            }
+        }
+
+
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .navbar {
+        .logo {
+            font-size: 1.2em;
+        }
+
+    }
+}

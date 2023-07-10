@@ -1,0 +1,45 @@
+.trending-container {
+    display: flex;
+    flex-direction: column;
+    margin: 5% 5% 0 5%;
+
+    .items-container {
+        display: flex;
+        justify-content: center;
+        gap: 50px;
+        flex-wrap: wrap;
+    }
+
+    .trending-title--container {
+        display: flex;
+        align-items: center;
+        gap: 30px;
+
+        .trending-title {
+            text-align: right;
+            font-weight: 300;
+            min-width: 300px;
+        }
+
+        .line {
+            border-bottom: 1px solid rgb(232, 232, 232);
+            width: 100%;
+            text-align: center;
+        }
+    }
+
+}
+
+
+@media screen and (max-width: 450px) {
+    .trending-container{
+
+        .trending-title--container{
+            
+            .trending-title{
+                font-size: 1.3em;
+                min-width: 190px;
+            }
+        }
+    }
+}

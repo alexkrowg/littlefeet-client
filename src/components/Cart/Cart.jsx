@@ -43,7 +43,7 @@ const Cart = (props) => {
             <div className="items">
                 {products.length > 0 ? products?.map(item => (
                     <div className="cart-item" key={item.id}>
-                        <img src={process.env.REACT_APP_UPLOAD_URL + item.img} alt="" className="item-img" />
+                        <img src={item.img} alt="" className="item-img" />
                         <div className="item-details">
                             <h1 className="item-title">{item.title}</h1>
                             <div className="item-statistics">

@@ -71,7 +71,8 @@ const Product = () => {
         id: data.id,
         removeId: nanoid(),
         title: data.attributes.title,
-        img: data?.attributes?.mainImage?.data[0]?.attributes?.url,
+        // img: data?.attributes?.mainImage?.data[0]?.attributes?.url,
+        img: data?.attributes?.mainImg[0],
         price: data.attributes.price,
         selectedColor,
         selectedSize,
@@ -83,7 +84,9 @@ const Product = () => {
   useEffect(() => {
     setSizeList(data?.attributes?.size)
     setColorList(data?.attributes?.colors)
-    setImages(data?.attributes?.mainImage?.data.map(item => item?.attributes?.url))
+    // setImages(data?.attributes?.mainImage?.data.map(item => item?.attributes?.url))
+    setImages(data?.attributes?.mainImg)
+    console.log(data)
   }, [data])
 
   return (
@@ -93,11 +96,13 @@ const Product = () => {
         <div className="product-images">
           <div className="all-images">
             {images && images.map(image => (
-              <img src={process.env.REACT_APP_UPLOAD_URL + image} alt="" onClick={() => setSelectedImage(images.indexOf(image))} />
+              <img src={image} alt="" onClick={() => setSelectedImage(images.indexOf(image))} />
+              // <img src={process.env.REACT_APP_UPLOAD_URL + image} alt="" onClick={() => setSelectedImage(images.indexOf(image))} />
             ))}
           </div>
           <div className="main-image">
-            <img src={process.env.REACT_APP_UPLOAD_URL + data?.attributes?.mainImage?.data[selectedImage]?.attributes?.url} alt="" />
+            {/* <img src={process.env.REACT_APP_UPLOAD_URL + data?.attributes?.mainImage?.data[selectedImage]?.attributes?.url} alt="" /> */}
+            <img src={data?.attributes?.mainImg[selectedImage]} alt="" />
           </div>
         </div>
 

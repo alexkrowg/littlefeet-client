@@ -77,12 +77,12 @@
         flex: 4;
         margin-left: 50px;
 
-        .category-list{
+        .category-list {
             display: flex;
             gap: 20px;
             margin-bottom: 50px;
-            
-            button{
+
+            button {
                 cursor: pointer;
                 font-size: 1em;
                 border: 1px solid #FF4E4E;
@@ -116,12 +116,13 @@
             font-size: 0.8em;
             position: static;
             margin-bottom: 30px;
+
         }
 
         .products-content {
             margin: 0;
 
-            .category-list{
+            .category-list {
                 overflow: scroll;
             }
         }

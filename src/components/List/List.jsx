@@ -9,16 +9,16 @@ const List = ({ selectedCategory, minPrice, maxPrice, sort, categoryId, sizes, c
         (category) => `&[filters][sub_categories][id][$eq]=${category}`
     ).join('')
     const colorsFilter = colors.map(
-        (color) => `&[filters][colors][$contains]=${color}`
+        (color) => `&[filters][colors][$containsi]=${color}`
     ).join('')
     const sizesFilter = sizes.map(
-        (size) => `&[filters][size][$contains]=${size}`
+        (size) => `&[filters][size][$containsi]=${size}`
     ).join('')
 
-    console.log(sort)
+
     const { data, loading, error } = useFetch(`/products?populate=*${categoryId > 0 ? `&filters[categories][id][$eq]=${categoryId}` : ""}${categoryFilter}&filters[price][$lte]=${maxPrice}&filters[price][$gte]=${minPrice}${sort ? `&sort=price:${sort}` : ""}${colorsFilter}${sizesFilter}`)
 
-    console.log(data)
+
 
     return (
         <div className='list-container'>

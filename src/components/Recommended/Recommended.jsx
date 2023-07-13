@@ -3,10 +3,10 @@ import Card from '../Card/Card'
 import "./Recommended.scss"
 import useFetch from '../../hooks/useFetch'
 
-const Recommended = ({ categoryId,currentProductId }) => {
+const Recommended = ({ categoryId, currentProductId }) => {
+
 
     const { data, loading, error } = useFetch(`/products?populate=*&filters[categories][id][$eq]=${categoryId}&filters[id][$ne]=${currentProductId}`)
-
 
 
     return (
@@ -16,7 +16,7 @@ const Recommended = ({ categoryId,currentProductId }) => {
                 <div className='line'></div>
             </div>}
             <div className="items-container">
-                {error ? "Something went wrong..." : (loading ? "Loading" : data?.slice(0,4).map(product => {
+                {error ? "Something went wrong..." : (loading ? "Loading" : data?.slice(0, 4).map(product => {
                     return <Card
                         key={product.id}
                         id={product.id}

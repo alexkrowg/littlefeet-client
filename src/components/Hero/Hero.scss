@@ -112,11 +112,30 @@
         }
 
         .hero-details{
-
             width: min(80%, 1000px);
 
             .hero-description{
                 width: 100%;
+            }
+        }
+    }
+
+
+    @media screen and (max-width: 400px) {
+        .hero-container{
+
+            .bg-elements{
+
+                .bg-cube1, .bg-cube2{
+                    width: 65px;
+                    height: 65px;
+                }
+            }
+
+            .hero-details{
+                h1{
+                    font-size: 2.5em;
+                }
             }
         }
     }

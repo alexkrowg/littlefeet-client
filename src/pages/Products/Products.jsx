@@ -20,7 +20,6 @@ const Products = () => {
   const { data, loading, error } = useFetch(categoryId > 0 ? `/sub-categories?filters[categories][id][$eq]=${categoryId}` : "/sub-categories")
   const categoryList = useFetch(`/categories`)
 
-  console.log(categoryId)
 
   const handleSubCategoryChange = (e) => {
     const value = e.target.value
@@ -43,7 +42,6 @@ const Products = () => {
     setSizes(isChecked ? [...sizes, value] : sizes.filter(size => size !== value))
   }
 
-  console.log(sizes)
 
   const handleMinPriceChange = (e) => {
     const value = e.target.value
@@ -53,6 +51,7 @@ const Products = () => {
     const value = e.target.value
     value === "" ? setMaxPrice(9999) : setMaxPrice(value)
   }
+
 
   const colorList = ["black","blue","orange","green","red","purple","gray","white","wheat","yellow","brown","beige","cream","pink"]
   const sizesList = ["6m","9m","1y","2y","3y"]
@@ -133,7 +132,7 @@ const Products = () => {
           ))}
         </div>
         <div className="product-cards">
-          <List maxPrice={maxPrice} minPrice={minPrice} sort={sort} selectedCategory={selectedCategory} categoryId={categoryId} sizes={sizes} colors={colors} />
+          {data && data.length > 0 && <List maxPrice={maxPrice} minPrice={minPrice} sort={sort} selectedCategory={selectedCategory} categoryId={categoryId} sizes={sizes} colors={colors} />}
         </div>
       </div>
 

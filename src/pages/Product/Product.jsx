@@ -12,6 +12,7 @@ const Product = () => {
 
   const { data, loading, error } = useFetch(`/products/${id}?populate=*`)
 
+
   const [quantity, setQuantity] = useState(0)
   const [images, setImages] = useState([])
   const [selectedImage, setSelectedImage] = useState(0)
@@ -24,6 +25,8 @@ const Product = () => {
     color: null,
     quantity: null
   })
+  const [catId, setCatId] = useState()
+  const [productId, setProductId] = useState()
   const dispatch = useDispatch()
 
 
@@ -86,7 +89,9 @@ const Product = () => {
     setColorList(data?.attributes?.colors)
     // setImages(data?.attributes?.mainImage?.data.map(item => item?.attributes?.url))
     setImages(data?.attributes?.mainImg)
-    console.log(data)
+    setCatId(data?.attributes?.categories?.data[0]?.id)
+    setProductId(data?.id)
+    
   }, [data])
 
   return (
@@ -158,7 +163,7 @@ const Product = () => {
       </div>
 
       <div className="recommended-section">
-        <Recommended categoryId={data?.attributes?.categories?.data[0]?.id} currentProductId={data.id} />
+        {catId && <Recommended categoryId={catId} currentProductId={productId} />}
       </div>
 
     </div>

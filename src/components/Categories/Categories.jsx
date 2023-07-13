@@ -21,7 +21,7 @@ const Categories = () => {
                         <div className="cat-col">
                             <div className="cat-row">
                                 <span className='bottom-text'>GIRL</span>
-                                <Link to={"/products"}><img src="https://images.pexels.com/photos/713959/pexels-photo-713959.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="" onClick={() => dispatch(setCategoryId(2))}/></Link>
+                                <Link to={"/products"}><img src="https://images.pexels.com/photos/189857/pexels-photo-189857.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="" onClick={() => dispatch(setCategoryId(2))}/></Link>
                             </div>
                         </div>
                         <div className="cat-col">
